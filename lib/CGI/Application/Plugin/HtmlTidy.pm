@@ -5,6 +5,7 @@ use strict;
 use warnings;
 use Carp;
 use CGI::Application 4.01;
+use HTML::Template;
 use HTML::Tidy 1.06;
 
 require Exporter;
@@ -12,7 +13,7 @@ our @ISA = qw(Exporter);
 
 our @EXPORT = qw(htmltidy htmltidy_clean htmltidy_config);
 
-our $VERSION = '0.50';
+our $VERSION = '0.51';
 
 sub import
 {
@@ -66,7 +67,7 @@ sub htmltidy_validate
                 text   => $_->text,
               };
         }
-        my $t = $self->load_tmpl( __find_my_path() . '/validate.tmpl', die_on_bad_params => 0, cache => 1 );
+        my $t = HTML::Template->new( filename => __find_my_path() . '/validate.tmpl', die_on_bad_params => 0, cache => 1 );
         $t->param( output => \@output );
         $self->devpopup->add_report(
             title   => 'HTML::Tidy validation report',
@@ -240,7 +241,7 @@ Rhesa Rozendaal, E<lt>rhesa@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2005 by Rhesa Rozendaal
+Copyright (C) 2006 by Rhesa Rozendaal
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.2 or,

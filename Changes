@@ -1,8 +1,13 @@
-Revision history for Perl extension CGI::Application::Plugin::HtmlTidy.
+Revision history for CGI-Application-Plugin-HtmlTidy
 
+0.51    2006-01-24  Rhesa Rozendaal <rhesa@cpan.org>
+    - htmltidy_validate now loads its template by itself to avoid
+      problems for people overriding CA::load_tmpl
+      (thanks to Alexander Becker)
+ 
 0.50    2005-10-04  Rhesa Rozendaal <rhesa@cpan.org>
     - made htmltidy_validate a report generator for CAP::DevPopup
-    - API stable, tability high, bumped up version number
+    - API stable
 
 0.01    Thu Apr 21 11:48:45 2005
 	- original version; created by h2xs 1.23 with options
