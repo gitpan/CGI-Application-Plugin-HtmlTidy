@@ -13,7 +13,7 @@ our @ISA = qw(Exporter);
 
 our @EXPORT = qw(htmltidy htmltidy_clean htmltidy_config);
 
-our $VERSION = '0.51';
+our $VERSION = '1.00';
 
 sub import
 {
@@ -158,8 +158,8 @@ It generates a detailed report specifying the issues with your html.
 
 The htmltidy_clean modifies your output to conform to the W3C standards.
 It has been in use for quite some time on a largish site (generating
-over 100,000 pages per day) and has proven to be quite stable and fast.
-Every single page view was valid html, which makes many browsers happy :-)
+over 3,000,000 pages per day) and has proven to be quite stable and fast.
+Every single page view is valid html, which makes many browsers happy :-)
 
 =head2 CONFIGURATION
 
@@ -179,7 +179,7 @@ Here's an example:
   sub setup {
     my $self = shift;
 	$self->param( htmltidy_config => {
-			    config_file => '/path/to/my/tidy.conf,
+			    config_file => '/path/to/my/tidy.conf',
 			});
   }
 
