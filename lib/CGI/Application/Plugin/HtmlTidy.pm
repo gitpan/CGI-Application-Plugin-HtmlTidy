@@ -13,7 +13,7 @@ our @ISA = qw(Exporter);
 
 our @EXPORT = qw(htmltidy htmltidy_clean htmltidy_config);
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 sub import
 {
@@ -34,8 +34,14 @@ sub htmltidy_config
 {
     my $self = shift;
     my %opts = @_;
-    $opts{config_file} ||= __find_config();
-    $opts{action}      ||= 'validate';
+
+    # if no options are supplied, use the default config file.
+    # otherwise, all options are passed through (and expected to be
+    # valid tidy-options).
+    if( !%opts ) {
+        $opts{config_file} = __find_config();
+    }
+    
     $self->{ __PACKAGE__ . 'OPTIONS' } = \%opts;
 }
 
@@ -214,6 +220,11 @@ keys are:
 
 The path to a config file used by tidy. See the tidy man page for details.
 
+=item tidy config options
+
+HTML::Tidy 1.08 now supports tidy options directly, so there is no need for
+a separate config file anymore. 
+
 =back
 
 =item htmltidy_validate
@@ -241,7 +252,7 @@ Rhesa Rozendaal, E<lt>rhesa@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2006 by Rhesa Rozendaal
+Copyright (C) 2005-2007 by Rhesa Rozendaal
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.2 or,
