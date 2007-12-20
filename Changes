@@ -1,5 +1,11 @@
 Revision history for CGI-Application-Plugin-HtmlTidy
 
+1.02    2007-12-20  Rhesa Rozendaal <rhesa@cpan.org>
+    - updated tests for when DevPopup is present. The interface of
+      HTML::Tidy->parse has changed (for the worse, if you ask me) in that
+      it returns false both when it fails to call libtidy, and when the document
+      has issues.
+
 1.01    2007-12-20  Rhesa Rozendaal <rhesa@cpan.org>
     - updated tests to comply with newer versions of CGI.pm
     - removed $opts{action} ||= 'validate'; I could find no reason why

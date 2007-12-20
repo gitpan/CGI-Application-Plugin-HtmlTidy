@@ -6,14 +6,14 @@ use warnings;
 use Carp;
 use CGI::Application 4.01;
 use HTML::Template;
-use HTML::Tidy 1.06;
+use HTML::Tidy 1.08;
 
 require Exporter;
 our @ISA = qw(Exporter);
 
 our @EXPORT = qw(htmltidy htmltidy_clean htmltidy_config);
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 sub import
 {
@@ -56,7 +56,7 @@ sub htmltidy_validate
 {
     my ( $self, $outputref ) = @_;
     return unless __check_header($self);
-    $self->htmltidy->parse( 'why would i need to pass a file name if it isn\'t used?', $$outputref ) or croak "Error parsing document: $@";
+    $self->htmltidy->parse( 'why would i need to pass a file name if it isn\'t used?', $$outputref );
     if ( $self->htmltidy->messages )
     {
         my @msgs;
@@ -164,7 +164,7 @@ It generates a detailed report specifying the issues with your html.
 
 The htmltidy_clean modifies your output to conform to the W3C standards.
 It has been in use for quite some time on a largish site (generating
-over 3,000,000 pages per day) and has proven to be quite stable and fast.
+over 10 million pages per day) and has proven to be quite stable and fast.
 Every single page view is valid html, which makes many browsers happy :-)
 
 =head2 CONFIGURATION
