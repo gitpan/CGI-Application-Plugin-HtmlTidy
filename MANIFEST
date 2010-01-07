@@ -1,7 +1,13 @@
 Changes
-Makefile.PL
+LICENSE
 MANIFEST
+META.yml
+Makefile.PL
 README
+dist.ini
+lib/CGI/Application/Plugin/HtmlTidy.pm
+lib/CGI/Application/Plugin/HtmlTidy/tidy.conf
+lib/CGI/Application/Plugin/HtmlTidy/validate.tmpl
 t/01regression.t
 t/02validate.t
 t/03clean.t
@@ -16,10 +22,6 @@ t/OptionsApp.pm
 t/TemplateApp.pm
 t/ValidateApp.pm
 t/ValidateSubApp.pm
-t/pod.t
 t/pod-coverage.t
+t/pod.t
 t/tidy.conf
-lib/CGI/Application/Plugin/HtmlTidy.pm
-lib/CGI/Application/Plugin/HtmlTidy/tidy.conf
-lib/CGI/Application/Plugin/HtmlTidy/validate.tmpl
-META.yml                                 Module meta-data (added by MakeMaker)

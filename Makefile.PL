@@ -1,16 +1,19 @@
-use 5.006;
+
+use strict;
+use warnings;
+
 use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
+
 WriteMakefile(
-    NAME              => 'CGI::Application::Plugin::HtmlTidy',
-    VERSION_FROM      => 'lib/CGI/Application/Plugin/HtmlTidy.pm', # finds $VERSION
-    LICENSE           => 'perl',
-    PREREQ_PM         => {
-            CGI::Application => 4.01,
-            HTML::Tidy       => 1.08,
-        }, 
-    ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
-      (ABSTRACT_FROM  => 'lib/CGI/Application/Plugin/HtmlTidy.pm', # retrieve abstract from module
-       AUTHOR         => 'Rhesa Rozendaal <rhesa@cpan.org>') : ()),
+  DISTNAME  => 'CGI-Application-Plugin-HtmlTidy',
+  NAME      => 'CGI::Application::Plugin::HtmlTidy',
+  AUTHOR    => 'Rhesa\ Rozendaal\ \<rhesa\@cpan\.org\>',
+  ABSTRACT  => 'Add HTML::Tidy support to CGI::Application',
+  VERSION   => '1.04',
+  EXE_FILES => [ qw() ],
+  (eval { ExtUtils::MakeMaker->VERSION(6.21) } ? (LICENSE => 'perl') : ()),
+  PREREQ_PM    => {
+    "CGI::Application" => '4.01',
+    "HTML::Tidy" => '1.08',
+  },
 );

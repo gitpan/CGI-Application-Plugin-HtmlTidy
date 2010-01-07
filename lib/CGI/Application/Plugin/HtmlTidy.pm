@@ -1,4 +1,6 @@
 package CGI::Application::Plugin::HtmlTidy;
+our $VERSION = '1.04';
+
 
 use 5.006;
 use strict;
@@ -12,8 +14,6 @@ require Exporter;
 our @ISA = qw(Exporter);
 
 our @EXPORT = qw(htmltidy htmltidy_clean htmltidy_config);
-
-our $VERSION = '1.02';
 
 sub import
 {
@@ -129,6 +129,10 @@ __END__
 =head1 NAME
 
 CGI::Application::Plugin::HtmlTidy - Add HTML::Tidy support to CGI::Application
+
+=head1 VERSION
+
+version 1.04
 
 =head1 SYNOPSIS
 
@@ -260,4 +264,3 @@ at your option, any later version of Perl 5 you may have available.
 
 
 =cut
-
