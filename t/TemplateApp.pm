@@ -1,6 +1,4 @@
 package TemplateApp;
-our $VERSION = '1.04';
-
 
 use strict;
 use CGI::Application;

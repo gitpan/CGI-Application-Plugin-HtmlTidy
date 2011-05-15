@@ -1,6 +1,7 @@
 package CGI::Application::Plugin::HtmlTidy;
-our $VERSION = '1.04';
-
+BEGIN {
+  $CGI::Application::Plugin::HtmlTidy::VERSION = '1.05';
+}
 
 use 5.006;
 use strict;
@@ -132,7 +133,7 @@ CGI::Application::Plugin::HtmlTidy - Add HTML::Tidy support to CGI::Application
 
 =head1 VERSION
 
-version 1.04
+version 1.05
 
 =head1 SYNOPSIS
 
